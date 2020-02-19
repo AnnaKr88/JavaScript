@@ -31,6 +31,7 @@ do {
             if (round == 10) {
                 money += 500;
                 alert('Вы победили!  (っ´ω`)ﾉ' + ' Ваш выигрыш: ' + money);
+                questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
                 break;
             }
 
