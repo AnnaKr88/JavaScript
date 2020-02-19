@@ -20,9 +20,15 @@ do {
                 }
             } while (!ok);
             if (event != questMass[0].q0) {
-                alert('Неверно! Раундов пройдено: ' + round);
+                if(round<5) {
+                    alert('Неверно! Раундов пройдено: ' + round + '. Ваш выигрыш: 0p.');
                 //questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
                 break;
+                } else if(round>=5) {
+                    alert('Неверно! Раундов пройдено: ' + round + '. Ваш выигрыш: ' + money);
+                    break;
+                }
+                
             } else if (event == questMass[0].q0) {
                 money += 100;
                 round++;
