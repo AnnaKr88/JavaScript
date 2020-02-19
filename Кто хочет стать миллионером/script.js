@@ -7,29 +7,38 @@ do {
         round = 0; // счётчик раундов
         money = 0; // счётчик выигрыша
         while (round <= 10) {
-            event = +prompt(questMass[0].q00 + '\n' + '\n' + questMass[0].q1 + '\n' + questMass[0].q2 + '\n' + questMass[0].q3 + '\n' + questMass[0].q4 + '\n\n0 - выход из игры');
-            if(event==questMass[0].q0) {
-                money+=100;
+            do {
+                ok = false;
+                event = +prompt(questMass[0].q00 + '\n' + '\n' + questMass[0].q1 + '\n' + questMass[0].q2 + '\n' + questMass[0].q3 + '\n' + questMass[0].q4 + '\n\n0 - выход из игры');
+                if (event == 0) {
+                    alert('Спасибо за игру! Ваш выигрыш: ' + money + 'p. Раундов пройдено: ' + round);
+                    break;
+                } else {
+                    ok = isAnswer(questMass[0].q0, event);
+                }
+            } while (!ok);
+
+
+            if (event == questMass[0].q0) {
+                money += 100;
                 round++;
                 alert('Верно! Ваш выигрыш сосавляет: ' + money + 'p. Раундов пройдено: ' + round);
-            } else if(event==0) {
-                alert('Спасибо за игру! Ваш выигрыш: ' + money + 'p. Раундов пройдено: ' + round);
-                break;
-            } else if(event!=questMass[0].q0) {
-                ok = isAnswer(questMass[0].q0, event);
+            } else if (event != questMass[0].q0) {
                 alert('Неверно! Раундов пройдено: ' + round);
                 break;
             }
-            questMass.shift();  
-            
+            questMass.shift();
+
             if (round == 10) {
                 money += 500;
                 alert('Вы победили!  (っ´ω`)ﾉ' + ' Ваш выигрыш: ' + money);
                 break;
             }
+
         }
     }
-} while (greeting == 1);
+}
+while (greeting == 1);
 alert('Спасибо за игру! До свидания!');
 
 function isAnswer(q, event) {
