@@ -10,6 +10,8 @@ do {
             do {
                 ok = false;
                 event = +prompt(questMass[0].q00 + '\n' + '\n' + questMass[0].q1 + '\n' + questMass[0].q2 + '\n' + questMass[0].q3 + '\n' + questMass[0].q4 + '\n\n0 - выход из игры');
+                
+                questMass.push(questMass[0]);
                 if (event == 0) {
                     alert('Спасибо за игру! Ваш выигрыш: ' + money + 'p. Раундов пройдено: ' + round);
                     break;
@@ -19,7 +21,7 @@ do {
             } while (!ok);
             if (event != questMass[0].q0) {
                 alert('Неверно! Раундов пройдено: ' + round);
-                questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
+                //questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
                 break;
             } else if (event == questMass[0].q0) {
                 money += 100;
@@ -31,7 +33,7 @@ do {
             if (round == 10) {
                 money += 500;
                 alert('Вы победили!  (っ´ω`)ﾉ' + ' Ваш выигрыш: ' + money);
-                questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
+                //questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
                 break;
             }
 
