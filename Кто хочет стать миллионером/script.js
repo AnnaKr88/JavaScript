@@ -17,17 +17,16 @@ do {
                     ok = isAnswer(questMass[0].q0, event);
                 }
             } while (!ok);
-
-
-            if (event == questMass[0].q0) {
+            if (event != questMass[0].q0) {
+                alert('Неверно! Раундов пройдено: ' + round);
+                questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
+                break;
+            } else if (event == questMass[0].q0) {
                 money += 100;
                 round++;
                 alert('Верно! Ваш выигрыш сосавляет: ' + money + 'p. Раундов пройдено: ' + round);
-            } else if (event != questMass[0].q0) {
-                alert('Неверно! Раундов пройдено: ' + round);
-                break;
-            }
-            questMass.shift();
+                questMass.shift();
+            }            
 
             if (round == 10) {
                 money += 500;
