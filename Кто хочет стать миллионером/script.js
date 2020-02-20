@@ -1,5 +1,4 @@
 var event, ok, round, money;
-var questMass = [questA, questB, questC, questD, questE, questF, questG, questH, questI, questJ];
 
 do {
     var greeting = +prompt('Хотите сыграть в игру "Кто хочет стать миллионером?" 1 - Да. 0 - Нет.');
