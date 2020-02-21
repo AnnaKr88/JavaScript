@@ -88,48 +88,49 @@
 
             }
         }
+        var j=0;
         
         for(var i=1; i<=10; i++) {
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + i}, abcRev[0], abcRev.shift());
+            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, abcRev[0], abcRev.shift());
         }
         
         
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + i}, num[0], num.shift());
+            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
             for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + i}, figureWhite[0], figureWhite.shift());
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + i}, figureWhite[0], figureWhite.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + i}, numRev[0], numRev.shift());
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + i}, num[0], num.shift());
+            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, figureWhite[0], figureWhite.shift());
+            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, figureWhite[0], figureWhite.shift());     }
+            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());
+            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
             for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + i}, figureWhite[0], figureWhite.shift());
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + i}, figureWhite[0], figureWhite.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + i}, numRev[0], numRev.shift());            
+            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, figureWhite[0], figureWhite.shift());
+            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, figureWhite[0], figureWhite.shift());     }
+            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());            
         for(var i = 1; i<=2; i++){
-             createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + i}, num[0], num.shift());
+             createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
             for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + i}, '');
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + i}, '');     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + i}, numRev[0], numRev.shift());
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + i}, num[0], num.shift());
+            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, '');
+            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, '');     }
+            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());
+            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
             for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + i}, '');
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + i}, '');     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + i}, numRev[0], numRev.shift());  
+            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, '');
+            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, '');     }
+            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());  
         }
            
-         createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + i}, num[0], num.shift());
+         createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
             for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-white' + ' ' + 'blackStyle', 'id': 'cell-white' + '-' + i}, figureBlackRev[0], figureBlackRev.shift());
-            createElement('div', {'class': 'cell-black' + ' ' + 'blackStyle', 'id': 'cell-black' + '-' + i}, figureBlackRev[0], figureBlackRev.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + i}, numRev[0], numRev.shift());
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + i}, num[0], num.shift());
+            createElement('div', {'class': 'cell-white' + ' ' + 'blackStyle', 'id': 'cell-white' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());
+            createElement('div', {'class': 'cell-black' + ' ' + 'blackStyle', 'id': 'cell-black' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());     }
+            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());
+            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
             for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-black' + ' ' + 'blackStyle', 'id': 'cell-black' + '-' + i}, figureBlackRev[0], figureBlackRev.shift());
-            createElement('div', {'class': 'cell-white' + ' ' + 'blackStyle', 'id': 'cell-white' + '-' + i}, figureBlackRev[0], figureBlackRev.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + i}, numRev[0], numRev.shift());  
+            createElement('div', {'class': 'cell-black' + ' ' + 'blackStyle', 'id': 'cell-black' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());
+            createElement('div', {'class': 'cell-white' + ' ' + 'blackStyle', 'id': 'cell-white' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());     }
+            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());  
         
         for(var i=1; i<=10; i++) {
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + i}, abc[0], abc.shift());
+            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, abc[0], abc.shift());
         }
     </script>
 </body></html>
