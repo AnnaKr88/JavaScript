@@ -1,141 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Chess</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-         #grid {
-            width: 620px;
-            display: grid;
-            grid-template-columns: 30px repeat(8, 70px) 30px;
-            grid-template-rows:30px repeat(8, 70px) 30px;
-             box-shadow: 10px 10px 5px;
-        }
-        .abcBorder, .abcBorderRevers {
-            background-color: #f5da8c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #1d1100;
-        }
-        .abcBorderRevers {
-            transform: rotate(180deg);
-        }
-        .cell-white, .cell-black { 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #1d1100;
-            
-        }
-        .cell-white {
-            background-color: antiquewhite;
-        }
-        .cell-black {
-            background-color: #8B4513;
-        }
-        .whiteStyle {
-            color: #FFFFE0;
-            font-size: 50px;
-            text-shadow: 5px 5px 3px #000;
-            transform: rotate(180deg);
-        }
-        .blackStyle {
-            color: #1d1100;
-            font-size: 50px;
-            text-shadow: 5px 5px 3px #000;
-            
-        }
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/lesson1.js" defer></script>
+    <script src="js/lesson2.js" defer></script>
+    <script src="js/lesson3.js" defer></script>
+
+
+
 </head>
 
 <body>
-    <div id="grid">
-
-    </div>
-
-    <script>        
-        var Grid = document.getElementById("grid");
-        
-        var figureWhite = ['&#9814;', '&#9815;', '&#9816;', '&#9812;', '&#9813;', '&#9816;', '&#9815;', '&#9814;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;'];// белые фигуры
-        
-        
-        var figureBlack = ['&#9820;','&#9821;','&#9822;', '&#9819;', '&#9818;', '&#9822;', '&#9821;', '&#9820;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;'];// чёрные фигуры
-        figureBlackRev = figureBlack.reverse();
-        
-        
-        var abc = ['','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ''];
-        var abcRev = ['','H', 'G', 'F', 'E', 'D', 'C', 'B', 'A', '']
-        var num = ['1', '2', '3', '4', '5', '6', '7', '8'];
-        var numRev = ['8', '7', '6', '5', '4', '3', '2', '1'];
-        
-        function createElement(name, attrs, text) {
-        var cell = document.createElement(name);
-        document.querySelector("div#grid").append(cell);
-            if(attrs) {
-                for(at in attrs) {
-                    if(at == 'class') {
-                        cell.className = attrs[at];
-                    }
-                    if(at == 'id') {
-                        cell.id = attrs[at];
-                    }
-                }
-            }
+    <div id="lesson1">
+        <div id="grid">
+            <div id="arrow_up"><button class="arrow" id="arrowUp" onclick="f()"> < </button>
+            </div>
+            <div id="imgSmall">
+                
+            </div>
+            <div id="arrow_down"><button class="arrow" id="arrowDown">></button></div>
+            <div id="line"></div>
             
-            if (text) {
+            <div id="imgBig">
+            </div>
+            <div class="pag" id="pagin">
+                <ul id="pag_list">
+                    <li id="listAroowLeft"><button id="listButton_AL" style="width: 25px; height: 25px; background: url('img/lesson1/Left_arrow.png') no-repeat center center #8B4513; border-radius: 100%;" onclick="left()" ></button></li>
+                   
+                   
+                    <li id="listAroowRight" ><button id="listButton_AR" style="width: 25px; height: 25px; background: url('img/lesson1/Right_arrow.png') no-repeat center center #8B4513; border-radius: 100%;" onclick="right()"></button></li>
+                </ul>
+            </div>
 
-                cell.innerHTML=(text);
+<!--<div id="countBasketPrice">
+                <div id="sum"></div>
+                <div id="busket"></div>
+            </div>
+            
+        </div>
+    </div>-->
 
-            }
-        }
-        var j=0;
-        
-        for(var i=1; i<=10; i++) {
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, abcRev[0], abcRev.shift());
-        }
-        
-        
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
-            for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, figureWhite[0], figureWhite.shift());
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, figureWhite[0], figureWhite.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
-            for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, figureWhite[0], figureWhite.shift());
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, figureWhite[0], figureWhite.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());            
-        for(var i = 1; i<=2; i++){
-             createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
-            for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, '');
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, '');     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
-            for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-black' + ' ' + 'whiteStyle', 'id': 'cell-black' + '-' + j++}, '');
-            createElement('div', {'class': 'cell-white' + ' ' + 'whiteStyle', 'id': 'cell-white' + '-' + j++}, '');     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());  
-        }
-           
-         createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
-            for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-white' + ' ' + 'blackStyle', 'id': 'cell-white' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());
-            createElement('div', {'class': 'cell-black' + ' ' + 'blackStyle', 'id': 'cell-black' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, num[0], num.shift());
-            for( var k=1; k<=4; k++) {
-            createElement('div', {'class': 'cell-black' + ' ' + 'blackStyle', 'id': 'cell-black' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());
-            createElement('div', {'class': 'cell-white' + ' ' + 'blackStyle', 'id': 'cell-white' + '-' + j++}, figureBlackRev[0], figureBlackRev.shift());     }
-            createElement('div', {'class': 'abcBorderRevers', 'id': 'abcBorderRevers' + '-' + j++}, numRev[0], numRev.shift());  
-        
-        for(var i=1; i<=10; i++) {
-            createElement('div', {'class': 'abcBorder', 'id': 'abcBorder' + '-' + j++}, abc[0], abc.shift());
-        }
-    </script>
+            <!--<button id="lesson1-click" onclick="lesson()">Урок 1</button>
+<button id="lesson2-click" onclick="lesson()">Урок 2</button>
+<button id="lesson3-click" onclick="lesson()">Урок 3</button>-->
 </body></html>
