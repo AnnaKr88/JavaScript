@@ -71,6 +71,8 @@ basket.innerHTML = "<h4>Корзина</4>"
 countBasketPrice.appendChild(basket);
 
 function addBasket(event) {
+    
+    console.log(basketMass);
 
     var cart = document.getElementById('basket');
 
@@ -85,6 +87,7 @@ function addBasket(event) {
     desc.innerHTML = "<h4><b>Описание:<b></h4>" + " " + "<p>" + productMass[buyId[1]].des + "</p>" + "<br>" + "<h4><b>Стоимость:<b></h4>" + " " + "<p>" + pr + "p." + "</p>" + "<br>" + "<h4><b>Количество:<b></h4>" + " " + "<p>" + am + "шт." + "</p>";
     cart.appendChild(desc);
     total(am, pr);
+    basketMass.unshift(buyId[1]);
    
 }
 
